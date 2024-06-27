@@ -34,6 +34,9 @@ form{
     width:80%;
     margin:auto;
 }
+Button{
+    margin-bottom: 1em;
+}
 input,textarea{
     margin-bottom: 2em;
     border:solid 4px white;
