@@ -67,7 +67,7 @@ function Section3(event){
     var opt = {
         margin:       0,
         filename:     Name.value+"'s"+"CV.pdf",
-        image:        { type: 'png', quality: 0.85 },
+        image:        { type: 'png', quality: 0.9 },
         html2canvas:  { scale: 2},
         jsPDF:        { unit: 'in', format: 'A4', orientation: 'portrait' }
       };
