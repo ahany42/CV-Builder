@@ -6,7 +6,9 @@
 </head>
 <body>
     <h1 class="WebsiteTitle">CV Builder Website</h1>
-<Section class="CVSection" id="section1">
+<Section class="CVSection" >
+  <div id="section1">
+
     <h2 class="SectionTitle">Personal Info</h2>
     <form id="form1">
          <label for="name" >Name *</label>
@@ -21,22 +23,51 @@
         <input type="text"name="Github" id="Github" placeholder="Your Github here">
         <label for="Location">Location</label>
         <input type="text"name="Location" id="Location" placeholder="Your Location here">
-        <button type="submit" id="SaveButton">Next</button>
+        <button type="submit" >Next</button>
     </form>
-</Section>
-<div class="row">
-    <div class="col-xs-12 col-md-8 offset-md-2 block border">
-      <div class="wrapper-progressBar">
-        <ul class="progressBar">
-          <li class="active" id="step1">Personal info</li>
-          <li id="step2">Experience</li>
-          <li id="step3">Education</li>
-          <li id="step4">Additional Info</li>
-          <li id="step5">Print</li>
-        </ul>
-      </div>
-    </div>
   </div>
+ <div class="section" id="section2">
+    <h2 class="SectionTitle">Experience</h2>
+    <form id="form2">
+
+      <button type="submit" >Next</button>
+    </form>
+  </div>
+  <div class="section" id="section3">
+    <h2 class="SectionTitle">Education</h2>
+    <form id="form3">
+
+      <button type="submit" >Next</button>
+    </form>
+  </div>
+  <div class="section" id="section4">
+    <h2 class="SectionTitle">Additional Info</h2>
+    <form id="form4">
+
+      <button type="submit">Next</button>
+    </form>
+  </div>
+  <div class="section" id="section5">
+    <h2 class="SectionTitle">Additional Info</h2>
+    <form id="form5">
+
+      <button type="submit">Save</button>
+    </form>
+  </div>
+    <div class="row">
+        <div class="col-xs-12 col-md-8 offset-md-2 block border">
+          <div class="wrapper-progressBar">
+            <ul class="progressBar">
+              <li class="active" id="step1">Personal info</li>
+              <li id="step2">Experience</li>
+              <li id="step3">Education</li>
+              <li id="step4">Additional Info</li>
+              <li id="step5">Save</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+</Section>
 <script src="index.js"></script>
 </body>
 </html>
