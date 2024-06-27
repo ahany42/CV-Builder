@@ -12,6 +12,8 @@ var Mobile=document.getElementById("Mobile");
 var Location=document.getElementById("Location");
 var Github=document.getElementById("Github");
 var Linkedn=document.getElementById("Linkedn");
+var PrintButton=document.getElementById("PrintButton");
+PrintButton.addEventListener('click',SavePDF);
 function Section2(event){
     event.preventDefault();
     var section1=document.getElementById("section1");
@@ -49,4 +51,17 @@ function Section3(event){
         var section5=document.getElementById("section5");
         section5.style.display="block";
     
+    }
+
+    function SavePDF(){
+        var { jsPDF } = window.jspdf;
+        var doc = new jsPDF();
+        var CV = 
+          Name.value
+        ;
+        doc.setFontSize(16);
+        var pdfWidth = doc.internal.pageSize.getWidth();
+        var pdfHeight = doc.internal.pageSize.getHeight();
+        doc.text(CV, pdfWidth/2, 10);
+        doc.save('CV.pdf');
     }

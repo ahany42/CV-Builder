@@ -6,7 +6,7 @@
 </head>
 <body>
     <h1 class="WebsiteTitle">CV Builder Website</h1>
-<Section class="CVSection" >
+<section class="CVSection" >
   <div id="section1">
 
     <h2 class="SectionTitle">Personal Info</h2>
@@ -49,10 +49,10 @@
   </div>
   <div class="section" id="section5">
     <h2 class="SectionTitle">Additional Info</h2>
-    <form id="form5">
+    
 
-      <button type="submit">Save</button>
-    </form>
+      <button id="PrintButton" onclick="SavePDF">Save</button>
+  
   </div>
     <div class="row">
         <div class="col-xs-12 col-md-8 offset-md-2 block border">
@@ -67,7 +67,10 @@
           </div>
         </div>
       </div>
-</Section>
+</section>
+<SECTION ID="CV"></SECTION>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 <script src="index.js"></script>
 </body>
 </html>
