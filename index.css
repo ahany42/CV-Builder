@@ -34,7 +34,7 @@ form{
     width:80%;
     margin:auto;
 }
-input{
+input,textarea{
     margin-bottom: 2em;
     border:solid 4px white;
     border-radius:4px;

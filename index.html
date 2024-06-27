@@ -2,12 +2,25 @@
 <head>
   <title>CV Builder Website</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<link rel="Stylesheet" href="index.css">
-<meta name="viewport" content="width=device-width" />
+  <link rel="Stylesheet" href="index.css">
+  <meta name="viewport" content="width=device-width" />
 </head>
 <body>
-    <h1 class="WebsiteTitle">CV Builder Website</h1>
-<section class="CVSection" >
+  <h1 class="WebsiteTitle">CV Builder Website</h1>
+  <section class="CVSection" >
+  <div class="row">
+      <div class="col-xs-12 col-md-8 offset-md-2 block border">
+        <div class="wrapper-progressBar">
+          <ul class="progressBar">
+            <li class="active" id="step1">Info</li>
+            <li id="step2">Career</li>
+            <li id="step3">Education</li>
+            <li id="step4">Skills</li>
+            <li id="step5">Save</li>
+          </ul>
+        </div>
+      </div>
+    </div>
   <div id="section1">
 
     <h2 class="SectionTitle">Personal Info</h2>
@@ -30,14 +43,36 @@
  <div class="section" id="section2">
     <h2 class="SectionTitle">Experience</h2>
     <form id="form2">
-
+     <label for="JobTitle" >Job Title *</label>
+     <input name="JobTitle" type="text" id="JobTitle" placeholder="Your Job Title here" required>
+     <label for="JobDescription">Job Description *</label>
+     <textarea name="JobDescription" id="JobDescription" placeholder="Your Job description here" required></textarea>
+     <label for="StartMonthJob" >Start Month*</label>
+     <input name="StartMonthJob" type="text" id="StartMonthJob" placeholder="Your Start Month here" required >
+     <label for="StartYearJob" >Start Year*</label>
+     <input name="StartYearJob" type="number" id="StartMonthJob" placeholder="Your Start Year here" required>
+     <label for="EndMonthJob" >End Month</label>
+     <input name="EndMonthJob" type="text" id="StartMonthJob" placeholder="Your Start Month here"  >
+     <label for="EndYearJob" >End Year</label>
+     <input name="EndYearJob" type="number" id="StartMonthJob" placeholder="Your Start Year here">
       <button type="submit" >Next</button>
     </form>
   </div>
   <div class="section" id="section3">
     <h2 class="SectionTitle">Education</h2>
     <form id="form3">
-
+      <label for="EducationTitle" >Education Title *</label>
+      <input name="EducationTitle" type="text" id="EducationTitle" placeholder="Your Education Title here" required>
+      <label for="EducationDescription" >Education Description *</label>
+      <input name="EducationDescription" type="text" id="EducationDescription" placeholder="Your Education Description here" required>
+      <label for="StartMonthEdu" >Start Month*</label>
+      <input name="StartMonthEdu" type="text" id="StartMonthEdu" placeholder="Your Start Month here" required >
+      <label for="StartYearEdu" >Start Year*</label>
+      <input name="StartYearEdu" type="number" id="StartMonthEdu" placeholder="Your Start Year here" required>
+      <label for="EndMonthEdu" >End Month</label>
+      <input name="EndMonthEdu" type="text" id="StartMonthEdu" placeholder="Your Start Month here"  >
+      <label for="EndYearEdu" >End Year</label>
+      <input name="EndYearEdu" type="number" id="StartMonthEdu" placeholder="Your Start Year here">
       <button type="submit" >Next</button>
     </form>
   </div>
@@ -55,19 +90,6 @@
       <button id="PrintButton">Save</button>
     </div>
   </div>
-    <div class="row">
-        <div class="col-xs-12 col-md-8 offset-md-2 block border">
-          <div class="wrapper-progressBar">
-            <ul class="progressBar">
-              <li class="active" id="step1">Info</li>
-              <li id="step2">Career</li>
-              <li id="step3">Education</li>
-              <li id="step4">Skills</li>
-              <li id="step5">Save</li>
-            </ul>
-          </div>
-        </div>
-      </div>
 </section>
 <div id="CV">
   <div class="CVHeader">
@@ -80,8 +102,6 @@
   </div>
   <hr>
   <div class="CVPartition">
-
- 
   <h3 class="CVSectionTitle">Experience:</h3>
 </div>
 <div class="CVPartition">
