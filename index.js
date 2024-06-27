@@ -65,13 +65,13 @@ function Section3(event){
         CreateCV();
     var element = document.getElementById('CV'); 
     var opt = {
-        margin:       1,
+        margin:       0,
         filename:     Name.value+"'s"+"CV.pdf",
-        image:        { type: 'jpeg', quality: 0.98 },
-        html2canvas:  { scale: 2 },
-        jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+        image:        { type: 'png', quality: 0.85 },
+        html2canvas:  { scale: 2},
+        jsPDF:        { unit: 'in', format: 'A4', orientation: 'portrait' }
       };
       html2pdf().set(opt).from(element).save();
-    
+   
       
     }
