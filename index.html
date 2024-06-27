@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<head>
+<title>CV Builder Website</title>
+<link rel="Stylesheet" href="index.css">
+<meta name="viewport" content="width=device-width" />
+</head>
+<body>
+    <h1 class="WebsiteTitle">CV Builder Website</h1>
+<Section class="CVSection" id="section1">
+    <h2 class="SectionTitle">Personal Info</h2>
+    <form id="form1">
+         <label for="name" >Name *</label>
+        <input type="text"name="Name" id="Name" placeholder="Your Name here" required >
+        <label for="Mobile">Mobile Number *</label>
+        <input type="text"name="Mobile" id="Mobile" placeholder="Your Mobile Number here" required>
+        <label for="Email">Email *</label>
+        <input type="Email"name="email" id="Email" placeholder="Your Email here required">
+        <label for="Linkedn">Linkedn Profile</label>
+        <input type="text"name="Linkedn" id="Linkedn" placeholder="Your Linkedn here">
+        <label for="Github">Github</label>
+        <input type="text"name="Github" id="Github" placeholder="Your Github here">
+        <label for="Location">Location</label>
+        <input type="text"name="Location" id="Location" placeholder="Your Location here">
+        <button type="submit" id="SaveButton">Next</button>
+    </form>
+</Section>
+<div class="row">
+    <div class="col-xs-12 col-md-8 offset-md-2 block border">
+      <div class="wrapper-progressBar">
+        <ul class="progressBar">
+          <li class="active" id="step1">Personal info</li>
+          <li id="step2">Experience</li>
+          <li id="step3">Education</li>
+          <li id="step4">Additional Info</li>
+          <li id="step5">Print</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+<script src="index.js"></script>
+</body>
+</html>

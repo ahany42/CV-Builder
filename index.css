@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&family=Lobster&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+  
+}
+.WebsiteTitle{
+    text-align: center;
+    margin-top:1em;
+    color:#274546;
+}
+body{
+        background-color: #efeee5;
+}
+.CVSection{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    display:flex;
+    min-height:70vh;
+    color:#274546;
+
+}
+form{
+    display:flex;
+    flex-direction: column;
+    width:80%;
+    margin:auto;
+}
+input{
+    margin-bottom: 2em;
+    border:solid 2px white;
+    border-radius:4px;
+    padding-left:0.5em;
+    background-color: #efeee5;
+    font-size:1.2em;
+}
+.SectionTitle{
+    margin: 0.5em;
+    text-align: center;
+}
+button{
+    background-color: #274546;
+    color:white;
+    font-size:1.5em;
+}
+/* stepper */
+.wrapper-progressBar {
+    width: 100%;
+    margin-top:2em;
+}
+
+.progressBar {
+}
+
+.progressBar li {
+    list-style-type: none;
+    float: left;
+    width: 20%;
+    position: relative;
+    text-align: center;
+}
+
+.progressBar li:before {
+    content: " ";
+    line-height: 30px;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ddd;
+    display: block;
+    text-align: center;
+    margin: 0 auto 10px;
+    background-color: white
+}
+
+.progressBar li:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background-color: #ddd;
+    top: 15px;
+    left: -50%;
+    z-index: -1;
+}
+
+.progressBar li:first-child:after {
+    content: none;
+}
+
+.progressBar li.active {
+    color:#274546;
+}
+
+.progressBar li.active:before {
+    border-color: #274546;
+    background-color: #274546;
+}
+
+.progressBar .active:after {
+    background-color: #274546;
+}
