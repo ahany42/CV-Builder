@@ -24,6 +24,10 @@ body{
     color:#274546;
 
 }
+label{
+    color:#274546;
+    font-size:1.1em;
+}
 form{
     display:flex;
     flex-direction: column;
@@ -32,7 +36,7 @@ form{
 }
 input{
     margin-bottom: 2em;
-    border:solid 2px white;
+    border:solid 4px white;
     border-radius:4px;
     padding-left:0.5em;
     background-color: #efeee5;
@@ -50,16 +54,38 @@ button{
 .section{
     display:none;
 }
+.ButtonContainer{
+    display: flex;
+    justify-content: center;
+}
+#PrintButton{
+    width:80%;
+    margin:auto !important;
+}
+#CV{
+    display:none;
+    width:90%;
+    border:1px solid black;
+    padding:1em;
+    margin:1em;
+    background-color: white;
+}
+.CVHeader{
+  flex-direction: column;
+  text-align:center;
+}
+.CVSectionTitle{
+    margin-top: 1em;
+}
+hr{
+    margin-top: 1em;
+}
 /* stepper */
 .wrapper-progressBar {
     width: 100%;
     margin-top:2em;
    
 }
-
-.progressBar {
-}
-
 .progressBar li {
     list-style-type: none;
     float: left;

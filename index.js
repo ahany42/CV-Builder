@@ -50,18 +50,28 @@ function Section3(event){
         step5.classList.add("active");
         var section5=document.getElementById("section5");
         section5.style.display="block";
-    
+        section5.classList.add("CenterSection");
     }
-
+    function CreateCV(){
+        document.getElementById("CV").style.display="Block";
+        document.getElementById("ApplicantName").innerHTML=Name.value;
+        document.getElementById("ApplicantEmail").innerHTML=Email.value;
+        document.getElementById("ApplicantMobile").innerHTML=Mobile.value;
+        document.getElementById("ApplicantLocation").innerHTML=Location.value;
+        document.getElementById("ApplicantGithub").innerHTML=Github.value;
+        document.getElementById("ApplicantLinkedn").innerHTML=Linkedn.value;
+    }
     function SavePDF(){
-        var { jsPDF } = window.jspdf;
-        var doc = new jsPDF();
-        var CV = 
-          Name.value
-        ;
-        doc.setFontSize(16);
-        var pdfWidth = doc.internal.pageSize.getWidth();
-        var pdfHeight = doc.internal.pageSize.getHeight();
-        doc.text(CV, pdfWidth/2, 10);
-        doc.save('CV.pdf');
+        CreateCV();
+    var element = document.getElementById('CV'); 
+    var opt = {
+        margin:       1,
+        filename:     Name.value+"'s"+"CV.pdf",
+        image:        { type: 'jpeg', quality: 0.98 },
+        html2canvas:  { scale: 2 },
+        jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+      };
+      html2pdf().set(opt).from(element).save();
+    
+      
     }

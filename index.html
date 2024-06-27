@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <head>
-<title>CV Builder Website</title>
+  <title>CV Builder Website</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <link rel="Stylesheet" href="index.css">
 <meta name="viewport" content="width=device-width" />
 </head>
@@ -48,29 +49,57 @@
     </form>
   </div>
   <div class="section" id="section5">
-    <h2 class="SectionTitle">Additional Info</h2>
-    
+    <h2 class="SectionTitle">Download your PDF below</h2>
+    <div class="ButtonContainer">
 
-      <button id="PrintButton" onclick="SavePDF">Save</button>
-  
+      <button id="PrintButton">Save</button>
+    </div>
   </div>
     <div class="row">
         <div class="col-xs-12 col-md-8 offset-md-2 block border">
           <div class="wrapper-progressBar">
             <ul class="progressBar">
-              <li class="active" id="step1">Personal info</li>
-              <li id="step2">Experience</li>
+              <li class="active" id="step1">Info</li>
+              <li id="step2">Career</li>
               <li id="step3">Education</li>
-              <li id="step4">Additional Info</li>
+              <li id="step4">Skills</li>
               <li id="step5">Save</li>
             </ul>
           </div>
         </div>
       </div>
 </section>
-<SECTION ID="CV"></SECTION>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<div id="CV">
+  <div class="CVHeader">
+    <h2 id="ApplicantName"></h2>
+    <h5 id="ApplicantMobile"></h5>
+    <h5 id="ApplicantEmail"></h5>
+    <h6 id="ApplicantLinkedn"></h6>
+    <h6 id="ApplicantGithub"></h6>
+    <h6 id="ApplicantLocation"></h6>
+  </div>
+  <hr>
+  <div class="CVPartition">
+
+ 
+  <h3 class="CVSectionTitle">Experience:</h3>
+</div>
+<div class="CVPartition">
+
+  <h3 class="CVSectionTitle">Education:</h3>
+</div>
+
+<div class="CVPartition">
+
+ 
+  <h3 class="CVSectionTitle">Skills:</h3>
+</div>
+<div class="CVPartition">
+
+ 
+  <h3 class="CVSectionTitle">Languages:</h3>
+</div>
+</div>
 <script src="index.js"></script>
 </body>
 </html>
