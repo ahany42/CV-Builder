@@ -1,5 +1,5 @@
 <h1>CV Builder Website</h1>
-<h4>Easily Customize your CV and Saving it as PDF using jsPDF</h4>
+<h4>Easily Customize your CV and Saving it as PDF</h4>
 
 <div align="center">
  <br>
