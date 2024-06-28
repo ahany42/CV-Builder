@@ -104,6 +104,10 @@ button{
 hr{
     margin-top: 1em;
 }
+.Date,.Details{
+    display: flex;
+    justify-content: left;
+}
 /* stepper */
 .wrapper-progressBar {
     width: 100%;

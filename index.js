@@ -86,6 +86,42 @@ function Section3(event){
           element.textContent=input.value;
           document.getElementById('LanguagesList').appendChild(element);
         });
+        const entries = document.querySelectorAll('.EduEntry');
+        entries.forEach((entry) => {
+          const Edu = {
+            title: entry.querySelector(`input[name="EducationTitle"]`).value,
+            provider: entry.querySelector(`input[name="EducationProvider"]`).value,
+            description: entry.querySelector(`input[name="EducationDescription"]`).value,
+            startMonth: entry.querySelector(`input[name="StartMonthEdu"]`).value,
+            startYear: entry.querySelector(`input[name="StartYearEdu"]`).value,
+            endMonth: entry.querySelector(`input[name="EndMonthEdu"]`).value,
+            endYear: entry.querySelector(`input[name="EndYearEdu"]`).value,
+          };
+          const JobContainer = document.createElement('div');
+          JobContainer.classList.add("Job");
+          if(Edu.endYear && Edu.endYear){
+           
+          }
+          else
+          {
+           Edu.endMonth=" ";
+           Edu.endYear="Present"
+          }
+          JobContainer.innerHTML=`
+          <div class="Date">
+           <h4>${Edu.startMonth}  ${Edu.startYear}</h4>
+           <h4>${Edu.endMonth} ${Edu.endYear}</h4>
+          </div>
+          <div class=Details>
+          <h4>${Edu.title}</h4>
+          <h4>${Edu.provider}</h4>
+          </div>
+          <div>
+          <h6>${Edu.description}</h6>
+          </div>
+          `;
+          document.getElementById('Job').appendChild(JobContainer);
+        });
     }
     function SavePDF(){
         CreateCV();
