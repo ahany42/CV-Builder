@@ -70,6 +70,14 @@ function Section3(event){
         document.getElementById("ApplicantLocation").innerHTML=Location.value;
         document.getElementById("ApplicantGithub").innerHTML=Github.value;
         document.getElementById("ApplicantLinkedn").innerHTML=Linkedn.value;
+        const skillsContainer = document.getElementById('SkillsEntry');
+        const skillInputs = skillsContainer.querySelectorAll('input');
+      
+        skillInputs.forEach(input => {
+          const element = document.createElement('li');
+          element.textContent=input.value;
+          document.getElementById('LanguagesList').appendChild(element);
+        });
     }
     function SavePDF(){
         CreateCV();

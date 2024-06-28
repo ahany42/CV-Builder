@@ -45,7 +45,12 @@ input,textarea{
     background-color: #efeee5;
     font-size:1.2em;
 }
-
+#LanguagesList>li {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ccc; /* Optional styling for separation */
+  }
 .SectionTitle{
     margin: 0.5em;
     text-align: center;
