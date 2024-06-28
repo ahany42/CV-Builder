@@ -91,15 +91,18 @@ function Section3(event){
         newEntry.classList.add('EduEntry');
          EducationCounter++;
         newEntry.innerHTML = `
+            <div class="ButtonContainer">
+            <button class="AddNewButton RemoveEducationButton" type="button">Remove</button>
+            </div>
             <label for="EducationTitle">Education ${EducationCounter} Title *</label>
             <input name="EducationTitle" type="text" placeholder="Your Education Title here" required>
             <label for="EducationProvider">Education ${EducationCounter} Provider *</label>
             <input name="EducationProvider" type="text" placeholder="Your Education Provider here" required>
             <label for="EducationDescription">Education ${EducationCounter} Description *</label>
             <input name="EducationDescription" type="text" placeholder="Your Education Description here" required>
-            <label for="StartMonthEdu">Start Month*</label>
+            <label for="StartMonthEdu">Start Month *</label>
             <input name="StartMonthEdu" type="text" placeholder="Your Start Month here" required>
-            <label for="StartYearEdu">Start Year*</label>
+            <label for="StartYearEdu">Start Year *</label>
             <input name="StartYearEdu" type="number" placeholder="Your Start Year here" required>
             <label for="EndMonthEdu">End Month</label>
             <input name="EndMonthEdu" type="text" placeholder="Your End Month here">
@@ -108,45 +111,73 @@ function Section3(event){
         `;
         educationContainer.insertBefore(newEntry, educationContainer.querySelector('button[type="submit"]'));
     }
+    document.getElementById('form3').addEventListener('click', function(event) {
+        if (event.target && event.target.classList.contains('RemoveEducationButton')) {
+            event.target.closest('.EduEntry').remove();
+        }
+    });
     function AddExperience(){
         const experienceContainer = document.getElementById('form2');
         const newEntry = document.createElement('div');
         newEntry.classList.add('ExpEntry');
         ExperienceCounter++;
-         newEntry.innerHTML = `
-      <label for="JobTitle" >Job ${ExperienceCounter} Title *</label>
-      <input name="JobTitle" type="text" id="JobTitle" placeholder="Your Job Title here" required>
-      <label for="Company" >Company *</label>
-      <input name="Company" type="text" id="Company" placeholder="Your Company here" required>
-      <label for="JobDescription">Job ${ExperienceCounter} Description *</label>
-      <textarea name="JobDescription" id="JobDescription" placeholder="Your Job description here" required></textarea>
-      <label for="StartMonthJob" >Start Month*</label>
-      <input name="StartMonthJob" type="text" id="StartMonthJob" placeholder="Your Start Month here" required >
-      <label for="StartYearJob" >Start Year*</label>
-      <input name="StartYearJob" type="number" id="StartMonthJob" placeholder="Your Start Year here" required>
-      <label for="EndMonthJob" >End Month</label>
-      <input name="EndMonthJob" type="text" id="StartMonthJob" placeholder="Your Start Month here"  >
-      <label for="EndYearJob" >End Year</label>
-      <input name="EndYearJob" type="number" id="StartMonthJob" placeholder="Your Start Year here">
-          `;
-          experienceContainer.insertBefore(newEntry, experienceContainer.querySelector('button[type="submit"]'));
+        newEntry.innerHTML = `
+        <div class="ButtonContainer">
+        <button class="AddNewButton RemoveExperienceButton" type="button">Remove</button>
+        </div>
+        <label for="JobTitle" >Job ${ExperienceCounter} Title *</label>
+        <input name="JobTitle" type="text" id="JobTitle" placeholder="Your Job Title here" required>
+        <label for="Company" >Company *</label>
+        <input name="Company" type="text" id="Company" placeholder="Your Company here" required>
+        <label for="JobDescription">Job ${ExperienceCounter} Description *</label>
+        <textarea name="JobDescription" id="JobDescription" placeholder="Your Job description here" required></textarea>
+        <label for="StartMonthJob" >Start Month *</label>
+        <input name="StartMonthJob" type="text" id="StartMonthJob" placeholder="Your Start Month here" required >
+        <label for="StartYearJob" >Start Year *</label>
+        <input name="StartYearJob" type="number" id="StartMonthJob" placeholder="Your Start Year here" required>
+        <label for="EndMonthJob" >End Month</label>
+        <input name="EndMonthJob" type="text" id="StartMonthJob" placeholder="Your Start Month here"  >
+        <label for="EndYearJob" >End Year</label>
+        <input name="EndYearJob" type="number" id="StartMonthJob" placeholder="Your Start Year here">
+        `;
+        experienceContainer.insertBefore(newEntry, experienceContainer.querySelector('button[type="submit"]'));
     }
+    document.getElementById('form2').addEventListener('click', function(event) {
+        if (event.target && event.target.classList.contains('RemoveExperienceButton')) {
+            event.target.closest('.ExpEntry').remove();
+        }
+    });
     function AddSkill(){
         const SkillContainer = document.getElementById('SkillsEntry');
         const newEntry = document.createElement('div');
         newEntry.classList.add('SkillsEntry');
         newEntry.innerHTML=`
+         <div class="ButtonContainer">
+        <button class="AddNewButton RemoveSkillButton" type="button">Remove</button>
+        </div>
          <input name="skills" id="skills"placeholder="Your Skills here" required>
         `;
         SkillContainer.appendChild(newEntry);
     }
+    document.getElementById('SkillsEntry').addEventListener('click', function(event) {
+        if (event.target && event.target.classList.contains('RemoveSkillButton')) {
+            event.target.closest('.SkillsEntry').remove();
+        }
+    });
     function AddLanguage(){
-        console.log("l");
         const LanguagesContainer=document.getElementById('LanguagesEntry');
         const newEntry=document.createElement('div');
         newEntry.classList.add('LanguagesEntry');
         newEntry.innerHTML=`
+         <div class="ButtonContainer">
+        <button class="AddNewButton RemoveLanguageButton" type="button">Remove</button>
+        </div>
         <input name="Languages" id="Languages"placeholder="Your Languages here" required>
         `;
         LanguagesContainer.appendChild(newEntry);
     }
+    document.getElementById('LanguagesEntry').addEventListener('click', function(event) {
+        if (event.target && event.target.classList.contains('RemoveLanguageButton')) {
+            event.target.closest('.LanguagesEntry').remove();
+        }
+    });
