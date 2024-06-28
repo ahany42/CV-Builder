@@ -36,6 +36,7 @@ form{
 }
 Button{
     margin-bottom: 1em;
+    cursor:pointer;
 }
 input,textarea{
     margin-bottom: 2em;
@@ -104,9 +105,31 @@ button{
 hr{
     margin-top: 1em;
 }
-.Date,.Details{
-    display: flex;
-    justify-content: left;
+.Details,.Date{
+   display:flex;
+   justify-content:left;
+
+}
+.Details>h4,.Date>h4{
+    margin-right:0.2em ;
+}
+.DateText{
+    color:rgb(83, 83, 83);
+}
+.Details{
+    color:#274546;
+}
+.Job{
+    margin-bottom:1em;
+}
+li>h4{
+    font-weight:600;
+}
+#ApplicantName{
+    font-size: 2em;
+}
+#ApplicantLocation{
+    color:#274546;
 }
 /* stepper */
 .wrapper-progressBar {

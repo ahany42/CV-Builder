@@ -75,7 +75,7 @@ function Section3(event){
       
         skillInputs.forEach(input => {
           const element = document.createElement('li');
-          element.textContent=input.value;
+          element.innerHTML=`<h4>${input.value}</h4>`;
           document.getElementById('SkillsList').appendChild(element);
         });
         const LanguagesContainer = document.getElementById('LanguagesEntry');
@@ -83,7 +83,7 @@ function Section3(event){
       
         LanguagesInputs.forEach(input => {
           const element = document.createElement('li');
-          element.textContent=input.value;
+          element.innerHTML=`<h4>${input.value}</h4>`;
           document.getElementById('LanguagesList').appendChild(element);
         });
         const entries = document.querySelectorAll('.EduEntry');
@@ -99,25 +99,23 @@ function Section3(event){
           };
           const JobContainer = document.createElement('div');
           JobContainer.classList.add("Job");
-          if(Edu.endYear && Edu.endYear){
-           
-          }
-          else
-          {
-           Edu.endMonth=" ";
-           Edu.endYear="Present"
+          if(!(Edu.endYear && Edu.endYear)){
+              Edu.endMonth=" ";
+              Edu.endYear="Present"
           }
           JobContainer.innerHTML=`
           <div class="Date">
-           <h4>${Edu.startMonth}  ${Edu.startYear}</h4>
-           <h4>${Edu.endMonth} ${Edu.endYear}</h4>
+           <h4 class="DateText">${Edu.startMonth}  ${Edu.startYear}</h4>
+           <h4>-</h4>
+           <h4 class="DateText">${Edu.endMonth} ${Edu.endYear}</h4>
           </div>
-          <div class=Details>
+          <div class="Details">
           <h4>${Edu.title}</h4>
+          <h4>,</h4>
           <h4>${Edu.provider}</h4>
           </div>
           <div>
-          <h6>${Edu.description}</h6>
+          <h5>${Edu.description}</h5>
           </div>
           `;
           document.getElementById('Job').appendChild(JobContainer);
