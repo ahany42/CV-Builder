@@ -14,6 +14,16 @@ var Github=document.getElementById("Github");
 var Linkedn=document.getElementById("Linkedn");
 var PrintButton=document.getElementById("PrintButton");
 PrintButton.addEventListener('click',SavePDF);
+var EducationButton=document.getElementById('EducationButton');
+EducationButton.addEventListener('click',AddEducation);
+var ExperienceButton=document.getElementById('ExperienceButton');
+ExperienceButton.addEventListener('click',AddExperience);
+var SkillsButton=document.getElementById('SkillButton');
+SkillsButton.addEventListener('click',AddSkill);
+var LanguagesButton=document.getElementById('LanguageButton');
+LanguagesButton.addEventListener('click',AddLanguage);
+var EducationCounter=1;
+var ExperienceCounter=1;
 function Section2(event){
     event.preventDefault();
     var section1=document.getElementById("section1");
@@ -31,6 +41,7 @@ function Section3(event){
     step3.classList.add("active");
     var section3=document.getElementById("section3");
     section3.style.display="block";
+
 }
     function Section4(event){
         event.preventDefault();
@@ -40,7 +51,6 @@ function Section3(event){
         step4.classList.add("active");
         var section4=document.getElementById("section4");
         section4.style.display="block";
-    
     }
     function Section5(event){
         event.preventDefault();
@@ -74,4 +84,69 @@ function Section3(event){
       html2pdf().set(opt).from(element).save();
    
       
+    }
+    function AddEducation(){
+        const educationContainer = document.getElementById('form3');
+        const newEntry = document.createElement('div');
+        newEntry.classList.add('EduEntry');
+         EducationCounter++;
+        newEntry.innerHTML = `
+            <label for="EducationTitle">Education ${EducationCounter} Title *</label>
+            <input name="EducationTitle" type="text" placeholder="Your Education Title here" required>
+            <label for="EducationProvider">Education ${EducationCounter} Provider *</label>
+            <input name="EducationProvider" type="text" placeholder="Your Education Provider here" required>
+            <label for="EducationDescription">Education ${EducationCounter} Description *</label>
+            <input name="EducationDescription" type="text" placeholder="Your Education Description here" required>
+            <label for="StartMonthEdu">Start Month*</label>
+            <input name="StartMonthEdu" type="text" placeholder="Your Start Month here" required>
+            <label for="StartYearEdu">Start Year*</label>
+            <input name="StartYearEdu" type="number" placeholder="Your Start Year here" required>
+            <label for="EndMonthEdu">End Month</label>
+            <input name="EndMonthEdu" type="text" placeholder="Your End Month here">
+            <label for="EndYearEdu">End Year</label>
+            <input name="EndYearEdu" type="number" placeholder="Your End Year here">
+        `;
+        educationContainer.insertBefore(newEntry, educationContainer.querySelector('button[type="submit"]'));
+    }
+    function AddExperience(){
+        const experienceContainer = document.getElementById('form2');
+        const newEntry = document.createElement('div');
+        newEntry.classList.add('ExpEntry');
+        ExperienceCounter++;
+         newEntry.innerHTML = `
+      <label for="JobTitle" >Job ${ExperienceCounter} Title *</label>
+      <input name="JobTitle" type="text" id="JobTitle" placeholder="Your Job Title here" required>
+      <label for="Company" >Company *</label>
+      <input name="Company" type="text" id="Company" placeholder="Your Company here" required>
+      <label for="JobDescription">Job ${ExperienceCounter} Description *</label>
+      <textarea name="JobDescription" id="JobDescription" placeholder="Your Job description here" required></textarea>
+      <label for="StartMonthJob" >Start Month*</label>
+      <input name="StartMonthJob" type="text" id="StartMonthJob" placeholder="Your Start Month here" required >
+      <label for="StartYearJob" >Start Year*</label>
+      <input name="StartYearJob" type="number" id="StartMonthJob" placeholder="Your Start Year here" required>
+      <label for="EndMonthJob" >End Month</label>
+      <input name="EndMonthJob" type="text" id="StartMonthJob" placeholder="Your Start Month here"  >
+      <label for="EndYearJob" >End Year</label>
+      <input name="EndYearJob" type="number" id="StartMonthJob" placeholder="Your Start Year here">
+          `;
+          experienceContainer.insertBefore(newEntry, experienceContainer.querySelector('button[type="submit"]'));
+    }
+    function AddSkill(){
+        const SkillContainer = document.getElementById('SkillsEntry');
+        const newEntry = document.createElement('div');
+        newEntry.classList.add('SkillsEntry');
+        newEntry.innerHTML=`
+         <input name="skills" id="skills"placeholder="Your Skills here" required>
+        `;
+        SkillContainer.appendChild(newEntry);
+    }
+    function AddLanguage(){
+        console.log("l");
+        const LanguagesContainer=document.getElementById('LanguagesEntry');
+        const newEntry=document.createElement('div');
+        newEntry.classList.add('LanguagesEntry');
+        newEntry.innerHTML=`
+        <input name="Languages" id="Languages"placeholder="Your Languages here" required>
+        `;
+        LanguagesContainer.appendChild(newEntry);
     }

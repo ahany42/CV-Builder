@@ -43,32 +43,38 @@
  <div class="section" id="section2">
     <h2 class="SectionTitle">Experience</h2>
     <form id="form2">
-    
-       <label for="JobTitle" >Job Title *</label>
-     <input name="JobTitle" type="text" id="JobTitle" placeholder="Your Job Title here" required>
-     <label for="Company" >Company *</label>
-     <input name="Company" type="text" id="Company" placeholder="Your Company here" required>
-     <label for="JobDescription">Job Description *</label>
-     <textarea name="JobDescription" id="JobDescription" placeholder="Your Job description here" required></textarea>
-     <label for="StartMonthJob" >Start Month*</label>
-     <input name="StartMonthJob" type="text" id="StartMonthJob" placeholder="Your Start Month here" required >
-     <label for="StartYearJob" >Start Year*</label>
-     <input name="StartYearJob" type="number" id="StartMonthJob" placeholder="Your Start Year here" required>
-     <label for="EndMonthJob" >End Month</label>
-     <input name="EndMonthJob" type="text" id="StartMonthJob" placeholder="Your Start Month here"  >
-     <label for="EndYearJob" >End Year</label>
-     <input name="EndYearJob" type="number" id="StartMonthJob" placeholder="Your Start Year here">
+    <div class="ExpEntry">
+
+      <label for="JobTitle" >Job Title *</label>
+      <input name="JobTitle" type="text" id="JobTitle" placeholder="Your Job Title here" required>
+      <label for="Company" >Company *</label>
+      <input name="Company" type="text" id="Company" placeholder="Your Company here" required>
+      <label for="JobDescription">Job Description *</label>
+      <textarea name="JobDescription" id="JobDescription" placeholder="Your Job description here" required></textarea>
+      <label for="StartMonthJob" >Start Month*</label>
+      <input name="StartMonthJob" type="text" id="StartMonthJob" placeholder="Your Start Month here" required >
+      <label for="StartYearJob" >Start Year*</label>
+      <input name="StartYearJob" type="number" id="StartMonthJob" placeholder="Your Start Year here" required>
+      <label for="EndMonthJob" >End Month</label>
+      <input name="EndMonthJob" type="text" id="StartMonthJob" placeholder="Your Start Month here"  >
+      <label for="EndYearJob" >End Year</label>
+      <input name="EndYearJob" type="number" id="StartMonthJob" placeholder="Your Start Year here">
+    </div>
       <button type="submit" >Next</button>
     </form>
+    <div class="ButtonContainer">
+      <button id="ExperienceButton" class="AddNewButton">Add Another Experience</button>
+    </div>
   </div>
   <div class="section" id="section3">
     <h2 class="SectionTitle">Education</h2>
     <form id="form3">
-      <label for="EducationTitle" >Education Title *</label>
-      <input name="EducationTitle" type="text" id="EducationTitle" placeholder="Your Education Title here" required>
-      <label for="EducationProvider" >Education Provider *</label>
-      <input name="EducationProvider" type="text" id="EducationProvider" placeholder="Your Education Provider here" required>
-      <label for="EducationDescription" >Education Description *</label>
+      <div class="EduEntry">
+        <label for="EducationTitle" >Education Title *</label>
+        <input name="EducationTitle" type="text" id="EducationTitle" placeholder="Your Education Title here" required>
+        <label for="EducationProvider" >Education Provider *</label>
+        <input name="EducationProvider" type="text" id="EducationProvider" placeholder="Your Education Provider here" required>
+        <label for="EducationDescription" >Education Description *</label>
       <input name="EducationDescription" type="text" id="EducationDescription" placeholder="Your Education Description here" required>
       <label for="StartMonthEdu" >Start Month*</label>
       <input name="StartMonthEdu" type="text" id="StartMonthEdu" placeholder="Your Start Month here" required >
@@ -78,21 +84,32 @@
       <input name="EndMonthEdu" type="text" id="StartMonthEdu" placeholder="Your Start Month here"  >
       <label for="EndYearEdu" >End Year</label>
       <input name="EndYearEdu" type="number" id="StartMonthEdu" placeholder="Your Start Year here">
-      <button type="submit" >Next</button>
-    </form>
+    </div>
+    <button type="submit" >Next</button>
+  </form>
+  <div class="ButtonContainer">
+    <button id="EducationButton" class="AddNewButton">Add Another Eduction</button>
   </div>
-  <div class="section" id="section4">
-    <h2 class="SectionTitle">Additional Info</h2>
-    <form id="form4">
-     <label for="skills">Skills *</label>
-     <input name="skills" id="skills"placeholder="Your Skills here">
-     <input name="skills" id="skills"placeholder="Your Skills here">
-     <input name="skills" id="skills"placeholder="Your Skills here">
-     <label for="Languages">Languages *</label>
-     <input name="Languages" id="Languages"placeholder="Your Languages here">
-     <input name="Languages" id="Languages"placeholder="Your Languages here">
-      <button type="submit">Next</button>
-    </form>
+</div>
+<div class="section" id="section4">
+  <h2 class="SectionTitle">Additional Info</h2>
+  <div class="ButtonContainer">
+    <button id="SkillButton" class="AddNewButton">Add Another Skill</button>
+  </div>
+  <form id="form4">
+    <label for="skills">Skills *</label>
+    <div class="SkillsEntry" id="SkillsEntry">
+      <input name="skills" id="skills"placeholder="Your Skills here" required>
+    </div>
+    <label for="Languages">Languages *</label>
+    <div class="LanguagesEntry" id="LanguagesEntry">
+      <input name="Languages" id="Languages"placeholder="Your Languages here" required>
+    </div>
+    <button type="submit">Next</button>
+  </form>
+  <div class="ButtonContainer">
+    <button id="LanguageButton" class="AddNewButton">Add Another Language</button>
+  </div>
   </div>
   <div class="section" id="section5">
     <h2 class="SectionTitle">Download your PDF below</h2>
