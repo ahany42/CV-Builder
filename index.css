@@ -46,10 +46,12 @@ input,textarea{
     font-size:1.2em;
 }
 #LanguagesList>li {
-    display: flex;
-    align-items: center;
-    padding: 10px;
-    border-bottom: 1px solid #ccc; /* Optional styling for separation */
+        align-items: center;
+  }
+  #LanguagesList,#SkillsList{
+    list-style-type: circle !important;
+    padding-left: 1em;
+    margin:0.5em 0;
   }
 .SectionTitle{
     margin: 0.5em;
@@ -83,7 +85,7 @@ button{
     margin:auto !important;
 }
 #CV{
-    display:none;
+    display:none; 
     width:695px;
     border:1px solid black;
     padding:1em;

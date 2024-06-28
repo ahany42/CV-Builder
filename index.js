@@ -76,6 +76,14 @@ function Section3(event){
         skillInputs.forEach(input => {
           const element = document.createElement('li');
           element.textContent=input.value;
+          document.getElementById('SkillsList').appendChild(element);
+        });
+        const LanguagesContainer = document.getElementById('LanguagesEntry');
+        const LanguagesInputs = LanguagesContainer.querySelectorAll('input');
+      
+        LanguagesInputs.forEach(input => {
+          const element = document.createElement('li');
+          element.textContent=input.value;
           document.getElementById('LanguagesList').appendChild(element);
         });
     }
