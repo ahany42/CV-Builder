@@ -50,10 +50,11 @@ input,textarea{
         align-items: center;
   }
   #LanguagesList,#SkillsList{
-    list-style-type: circle !important;
+    list-style-type: disc !important;
     padding-left: 1em;
     margin:0.5em 0;
   }
+  
 .SectionTitle{
     margin: 0.5em;
     text-align: center;
@@ -93,7 +94,8 @@ button{
     background-color: white;
     margin:auto;
     justify-self: center;
-    margin-bottom: 2em;
+    margin: 2em 0;
+
     
 }
 .CVHeader{
