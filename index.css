@@ -72,6 +72,9 @@ input,textarea{
     text-decoration: underline;
     
 }
+.page-break-before {
+    page-break-before: always;
+}
 button{
     background-color: #274546;
     color:white;
