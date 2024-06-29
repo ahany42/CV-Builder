@@ -91,19 +91,19 @@ function Section3(event){
           const Edu = {
             title: entry.querySelector(`input[name="EducationTitle"]`).value,
             provider: entry.querySelector(`input[name="EducationProvider"]`).value,
-            description: entry.querySelector(`input[name="EducationDescription"]`).value,
+            description: entry.querySelector(`textarea[name="EducationDescription"]`).value,
             startMonth: entry.querySelector(`input[name="StartMonthEdu"]`).value,
             startYear: entry.querySelector(`input[name="StartYearEdu"]`).value,
             endMonth: entry.querySelector(`input[name="EndMonthEdu"]`).value,
             endYear: entry.querySelector(`input[name="EndYearEdu"]`).value,
           };
-          const JobContainer = document.createElement('div');
-          JobContainer.classList.add("Job");
-          if(!(Edu.endYear && Edu.endYear)){
+          const EduContainer = document.createElement('div');
+          EduContainer.classList.add("Education");
+          if(!Edu.endYear || !Edu.endYear){
               Edu.endMonth=" ";
               Edu.endYear="Present"
           }
-          JobContainer.innerHTML=`
+          EduContainer.innerHTML=`
           <div class="Date">
            <h4 class="DateText">${Edu.startMonth}  ${Edu.startYear}</h4>
            <h4>-</h4>
@@ -118,8 +118,42 @@ function Section3(event){
           <h5>${Edu.description}</h5>
           </div>
           `;
-          document.getElementById('Job').appendChild(JobContainer);
+          document.getElementById('Education').appendChild(EduContainer);
         });
+        const Jobentries = document.querySelectorAll('.ExpEntry');
+        Jobentries.forEach((entry) => {
+        const JobContainer = document.createElement('div');
+        JobContainer.classList.add("Job");
+        const Job = {
+            title: entry.querySelector(`input[name="JobTitle"]`).value,
+            company:entry.querySelector(`input[name="Company"]`).value,
+            jobDescription:entry.querySelector(`textarea[name="JobDescription"]`).value,
+            startMonth: entry.querySelector(`input[name="StartMonthJob"]`).value,
+            startYear: entry.querySelector(`input[name="StartYearJob"]`).value,
+            endMonth: entry.querySelector(`input[name="EndMonthJob"]`).value,
+            endYear: entry.querySelector(`input[name="EndYearJob"]`).value,
+        };
+        if(!Job.endYear || !Job.endYear){
+            Job.endMonth=" ";
+            Job.endYear="Present"
+        }
+        JobContainer.innerHTML=`
+           <div class="Date">
+           <h4 class="DateText">${Job.startMonth}  ${Job.startYear}</h4>
+           <h4>-</h4>
+           <h4 class="DateText">${Job.endMonth} ${Job.endYear}</h4>
+          </div>
+          <div class="Details">
+          <h4>${Job.title}</h4>
+          <h4>,</h4>
+          <h4>${Job.company}</h4>
+          </div>
+          <div>
+          <h5>${Job.jobDescription}</h5>
+          </div>
+        `;
+        document.getElementById('Job').appendChild(JobContainer);
+    });
     }
     function SavePDF(){
         CreateCV();
