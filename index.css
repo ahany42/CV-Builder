@@ -35,7 +35,7 @@ form{
     margin:auto;
 }
 Button{
-    margin-bottom: 1em;
+    margin-bottom: 0.5em;
     cursor:pointer;
 }
 input,textarea{
@@ -50,8 +50,7 @@ input,textarea{
         align-items: center;
   }
   #LanguagesList,#SkillsList{
-    list-style-type: disc !important;
-    padding-left: 1em;
+    list-style-type: none;
     margin:0.5em 0;
   }
   
@@ -92,9 +91,8 @@ button{
     border:1px solid black;
     padding:1em;
     background-color: white;
-    margin:auto;
-    justify-self: center;
-    margin: 2em 0;
+    /* justify-self: center; */
+    margin: 0em auto 1em auto;
 
     
 }

@@ -75,7 +75,7 @@ function Section3(event){
       
         skillInputs.forEach(input => {
           const element = document.createElement('li');
-          element.innerHTML=`<h4>${input.value}</h4>`;
+          element.innerHTML=`<h4><strong>-</strong> ${input.value}</h4>`;
           document.getElementById('SkillsList').appendChild(element);
         });
         const LanguagesContainer = document.getElementById('LanguagesEntry');
@@ -83,7 +83,7 @@ function Section3(event){
       
         LanguagesInputs.forEach(input => {
           const element = document.createElement('li');
-          element.innerHTML=`<h4>${input.value}</h4>`;
+          element.innerHTML=`<h4><strong>-</strong> ${input.value}</h4>`;
           document.getElementById('LanguagesList').appendChild(element);
         });
         const entries = document.querySelectorAll('.EduEntry');
