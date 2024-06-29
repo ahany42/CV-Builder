@@ -32,6 +32,8 @@ function Section2(event){
     step2.classList.add("active");
     var section2=document.getElementById("section2");
     section2.style.display="block";
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0; 
 }
 function Section3(event){
     event.preventDefault();
@@ -41,6 +43,8 @@ function Section3(event){
     step3.classList.add("active");
     var section3=document.getElementById("section3");
     section3.style.display="block";
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0; 
 
 }
     function Section4(event){
@@ -51,6 +55,8 @@ function Section3(event){
         step4.classList.add("active");
         var section4=document.getElementById("section4");
         section4.style.display="block";
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0; 
     }
     function Section5(event){
         event.preventDefault();
@@ -61,6 +67,8 @@ function Section3(event){
         var section5=document.getElementById("section5");
         section5.style.display="block";
         section5.classList.add("CenterSection");
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0; 
     }
     function CreateCV(){
         document.getElementById("CV").style.display="Block";
@@ -115,7 +123,7 @@ function Section3(event){
           <h4>${Edu.provider}</h4>
           </div>
           <div>
-          <h5>${Edu.description}</h5>
+          <h6>${Edu.description}</h6>
           </div>
           `;
           document.getElementById('Education').appendChild(EduContainer);
@@ -149,7 +157,7 @@ function Section3(event){
           <h4>${Job.company}</h4>
           </div>
           <div>
-          <h5>${Job.jobDescription}</h5>
+          <h6>${Job.jobDescription}</h6>
           </div>
         `;
         document.getElementById('Job').appendChild(JobContainer);
@@ -165,8 +173,9 @@ function Section3(event){
         html2canvas:  { scale: 2},
         jsPDF:        { unit: 'in', format: 'A4', orientation: 'portrait' }
       };
+      element.classList.add('pdf-render');
       html2pdf().set(opt).from(element).save();
-   
+      element.classList.remove('pdf-render');
       
     }
     function AddEducation(){

@@ -18,7 +18,6 @@ body{
 .CVSection{
     display:flex;
     flex-direction: column;
-    justify-content: center;
     display:flex;
     min-height:70vh;
     color:#274546;
@@ -58,6 +57,11 @@ input,textarea{
     margin: 0.5em;
     text-align: center;
 }
+.section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 .EduEntry,.ExpEntry,.SkillsEntry,.LanguagesEntry{
     display: flex;
     flex-direction: column;
@@ -91,10 +95,11 @@ button{
     border:1px solid black;
     padding:1em;
     background-color: white;
-    /* justify-self: center; */
-    margin: 0em auto 1em auto;
-
-    
+    margin: 1em auto 1em auto; 
+    color:black; 
+}
+.pdf-render {
+    width: 695px !important;
 }
 .CVHeader{
   flex-direction: column;
@@ -131,6 +136,11 @@ li>h4{
 }
 #ApplicantLocation{
     color:#274546;
+}
+@media(max-width:695px){
+    #CV{
+        width:80%;
+    }
 }
 /* stepper */
 .wrapper-progressBar {
