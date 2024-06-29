@@ -22,8 +22,6 @@ var SkillsButton=document.getElementById('SkillButton');
 SkillsButton.addEventListener('click',AddSkill);
 var LanguagesButton=document.getElementById('LanguageButton');
 LanguagesButton.addEventListener('click',AddLanguage);
-var EducationCounter=1;
-var ExperienceCounter=1;
 function Section2(event){
     event.preventDefault();
     var section1=document.getElementById("section1");
@@ -99,18 +97,30 @@ function Section3(event){
           const Edu = {
             title: entry.querySelector(`input[name="EducationTitle"]`).value,
             provider: entry.querySelector(`input[name="EducationProvider"]`).value,
-            description: entry.querySelector(`textarea[name="EducationDescription"]`).value,
+            description: entry.querySelector(`input[name="EducationDescription"]`).value,
             startMonth: entry.querySelector(`input[name="StartMonthEdu"]`).value,
             startYear: entry.querySelector(`input[name="StartYearEdu"]`).value,
-            endMonth: entry.querySelector(`input[name="EndMonthEdu"]`).value,
-            endYear: entry.querySelector(`input[name="EndYearEdu"]`).value,
+           endMonth: "",
+           endYear:""
           };
+          const endMonthInput = entry.querySelector(`input[name="EndMonthJob"]`);
+         const endYearInput = entry.querySelector(`input[id="EndYearJob"]`);
+            if (endMonthInput ===" " || endYearInput===" ") {
+                Job.endMonth = " ";
+                Job.endYear = "Present";
+            } else {
+                try{
+
+                    Job.endMonth = endMonthInput.value;
+                    Job.endYear = endYearInput.value;
+                }
+                catch(error){
+                    
+                }
+            }
           const EduContainer = document.createElement('div');
           EduContainer.classList.add("Education");
-          if(!Edu.endYear || !Edu.endYear){
-              Edu.endMonth=" ";
-              Edu.endYear="Present"
-          }
+          
           EduContainer.innerHTML=`
           <div class="Date">
            <h4 class="DateText">${Edu.startMonth}  ${Edu.startYear}</h4>
@@ -135,16 +145,30 @@ function Section3(event){
         const Job = {
             title: entry.querySelector(`input[name="JobTitle"]`).value,
             company:entry.querySelector(`input[name="Company"]`).value,
-            jobDescription:entry.querySelector(`textarea[name="JobDescription"]`).value,
+            jobDescription:entry.querySelector(`input[name="JobDescription"]`).value,
             startMonth: entry.querySelector(`input[name="StartMonthJob"]`).value,
             startYear: entry.querySelector(`input[name="StartYearJob"]`).value,
-            endMonth: entry.querySelector(`input[name="EndMonthJob"]`).value,
-            endYear: entry.querySelector(`input[name="EndYearJob"]`).value,
-        };
-        if(!Job.endYear || !Job.endYear){
-            Job.endMonth=" ";
-            Job.endYear="Present"
-        }
+            endMonth: "",
+            endYear: ""
+};
+
+
+const endMonthInput = entry.querySelector(`input[name="EndMonthJob"]`);
+const endYearInput = entry.querySelector(`input[id="EndYearJob"]`);
+
+if (endMonthInput===" " || endYearInput===" ") {
+    Job.endMonth = " ";
+    Job.endYear = "Present";
+} else {
+    try{
+
+        Job.endMonth = endMonthInput.value;
+        Job.endYear = endYearInput.value;
+    }
+    catch(error){
+
+    }
+}
         JobContainer.innerHTML=`
            <div class="Date">
            <h4 class="DateText">${Job.startMonth}  ${Job.startYear}</h4>
@@ -179,19 +203,18 @@ function Section3(event){
       
     }
     function AddEducation(){
-        const educationContainer = document.getElementById('form3');
+        const educationContainer = document.getElementById('EduEntry');
         const newEntry = document.createElement('div');
         newEntry.classList.add('EduEntry');
-         EducationCounter++;
         newEntry.innerHTML = `
             <div class="ButtonContainer">
             <button class="AddNewButton RemoveEducationButton" type="button">Remove</button>
             </div>
-            <label for="EducationTitle">Education ${EducationCounter} Title *</label>
+            <label for="EducationTitle">Education Title *</label>
             <input name="EducationTitle" type="text" placeholder="Your Education Title here" required>
-            <label for="EducationProvider">Education ${EducationCounter} Provider *</label>
+            <label for="EducationProvider">Education Provider *</label>
             <input name="EducationProvider" type="text" placeholder="Your Education Provider here" required>
-            <label for="EducationDescription">Education ${EducationCounter} Description *</label>
+            <label for="EducationDescription">Education Description *</label>
             <input name="EducationDescription" type="text" placeholder="Your Education Description here" required>
             <label for="StartMonthEdu">Start Month *</label>
             <input name="StartMonthEdu" type="text" placeholder="Your Start Month here" required>
@@ -202,7 +225,7 @@ function Section3(event){
             <label for="EndYearEdu">End Year</label>
             <input name="EndYearEdu" type="number" placeholder="Your End Year here">
         `;
-        educationContainer.insertBefore(newEntry, educationContainer.querySelector('button[type="submit"]'));
+        educationContainer.appendChild(newEntry);
     }
     document.getElementById('form3').addEventListener('click', function(event) {
         if (event.target && event.target.classList.contains('RemoveEducationButton')) {
@@ -210,30 +233,29 @@ function Section3(event){
         }
     });
     function AddExperience(){
-        const experienceContainer = document.getElementById('form2');
+        const experienceContainer = document.getElementById('ExpEntry');
         const newEntry = document.createElement('div');
         newEntry.classList.add('ExpEntry');
-        ExperienceCounter++;
         newEntry.innerHTML = `
         <div class="ButtonContainer">
         <button class="AddNewButton RemoveExperienceButton" type="button">Remove</button>
         </div>
-        <label for="JobTitle" >Job ${ExperienceCounter} Title *</label>
+        <label for="JobTitle" >Job Title *</label>
         <input name="JobTitle" type="text" id="JobTitle" placeholder="Your Job Title here" required>
         <label for="Company" >Company *</label>
         <input name="Company" type="text" id="Company" placeholder="Your Company here" required>
-        <label for="JobDescription">Job ${ExperienceCounter} Description *</label>
-        <textarea name="JobDescription" id="JobDescription" placeholder="Your Job description here" required></textarea>
+        <label for="JobDescription">Job Description *</label>
+        <input name="JobDescription" id="JobDescription" placeholder="Your Job description here" required>
         <label for="StartMonthJob" >Start Month *</label>
         <input name="StartMonthJob" type="text" id="StartMonthJob" placeholder="Your Start Month here" required >
         <label for="StartYearJob" >Start Year *</label>
-        <input name="StartYearJob" type="number" id="StartMonthJob" placeholder="Your Start Year here" required>
+        <input name="StartYearJob" type="number" id="StartYearJob" placeholder="Your Start Year here" required>
         <label for="EndMonthJob" >End Month</label>
-        <input name="EndMonthJob" type="text" id="StartMonthJob" placeholder="Your Start Month here"  >
+        <input name="EndMonthJob" type="text" id="EndMonthJob" placeholder="Your End Month here"  >
         <label for="EndYearJob" >End Year</label>
-        <input name="EndYearJob" type="number" id="StartMonthJob" placeholder="Your Start Year here">
+        <input name="EndYearJob" type="number" id="EndYearJob" placeholder="Your End Year here">
         `;
-        experienceContainer.insertBefore(newEntry, experienceContainer.querySelector('button[type="submit"]'));
+        experienceContainer.appendChild(newEntry); 
     }
     document.getElementById('form2').addEventListener('click', function(event) {
         if (event.target && event.target.classList.contains('RemoveExperienceButton')) {
